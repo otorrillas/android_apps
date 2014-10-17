@@ -2,7 +2,7 @@ RandomAsteroids
 ===
 
 
-Modern adaptation Game based on classic Asteroids game.
+Modern adaptation of the classic Asteroids game.
 
 Platform: Android
 
