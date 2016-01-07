@@ -2,7 +2,7 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#72BA59</color>
 
     <color name="recipe_list_bgcolor">#fff</color>
     <color name="app_bg">#ccc</color>

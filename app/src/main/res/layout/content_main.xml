@@ -21,16 +21,16 @@
             android:id="@+id/last_five"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Last 5 recipes"
-            android:textSize="25dp"
+            android:text="Last used recipes"
+            android:textStyle="bold"
+            android:padding="@dimen/activity_vertical_margin"
             />
 
         <ListView
             android:id="@+id/recipeView"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            >
-        </ListView>
+            android:layout_height="fill_parent" />
+
 
     </LinearLayout>
 

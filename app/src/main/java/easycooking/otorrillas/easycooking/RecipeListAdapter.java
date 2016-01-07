@@ -2,15 +2,13 @@ package easycooking.otorrillas.easycooking;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
-
-import org.w3c.dom.Text;
 
 /**
  * Created by otorr on 13/12/2015.
@@ -58,7 +56,10 @@ public class RecipeListAdapter extends BaseAdapter{
         rowView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "You clicked " + recipeNameList[position], Toast.LENGTH_LONG).show();
+                //Toast.makeText(context, "You clicked " + recipeNameList[position], Toast.LENGTH_LONG).show();
+                Intent i = new Intent(context.getApplicationContext(), RecipeActivity.class);
+                i.putExtra("recipe_name", recipeNameList[position]);
+                context.startActivity(i);
             }
         });
         return rowView;

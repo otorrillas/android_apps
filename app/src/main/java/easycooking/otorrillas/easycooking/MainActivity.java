@@ -1,25 +1,43 @@
 package easycooking.otorrillas.easycooking;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ListView;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    private DBOpenHelper db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        db = new DBOpenHelper(getApplicationContext());
+        final String PREFS_NAME = "EasyCookingPreferences";
+        SharedPreferences settings = getSharedPreferences(PREFS_NAME, 0);
+        if (settings.getBoolean("first_launch", true)) {
+            //the app is being launched for first time, do something
+            Log.d("Comments", "First time");
+
+            db.insert_initial_data();
+
+            // record the fact that the app has been started at least once
+            settings.edit().putBoolean("first_launch", false).commit();
+        }
+
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -44,8 +62,8 @@ public class MainActivity extends AppCompatActivity
 
         /** List the first 5 recipes **/
         //Get the data
-
-        int [] recipeImgs = {R.drawable.ic_menu_camera, R.drawable.ic_menu_camera, R.drawable.ic_menu_camera, R.drawable.ic_menu_camera, R.drawable.ic_menu_camera};
+        int recipeImgSample = R.drawable.ic_action_picture;
+        int[] recipeImgs = {recipeImgSample, recipeImgSample, recipeImgSample, recipeImgSample, recipeImgSample};
         String [] recipeNameList = {"1ra recepta", "2na recepta", "3ra recepta", "4ta recepta", "5na recepta"};
 
 
@@ -93,18 +111,15 @@ public class MainActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+        if (id == R.id.nav_categories) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_advancedsearch) {
 
-        } else if (id == R.id.nav_manage) {
+        } else if (id == R.id.nav_about) {
 
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        } else if (id == R.id.nav_settings) {
+            Intent i = new Intent(getApplicationContext(), SettingsActivity.class);
+            startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
