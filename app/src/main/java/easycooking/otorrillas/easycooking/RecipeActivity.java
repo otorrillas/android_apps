@@ -40,7 +40,7 @@ public class RecipeActivity extends AppCompatActivity {
         this.setTitle(recipe_name);
 
 
-        /* Ingredient ListView */
+        /* RecipeIngredient ListView */
         String[] ingredientList = {"Ingredient1", "Ingredient2", "Ingredient3"};
         ArrayList<ArrayList<String>> altIngredientsList = null;
 

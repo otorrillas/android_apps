@@ -9,7 +9,6 @@ public class RecipeContract {
     public static final String COOKING_TIME = "cooking_time";
     public static final String CATEGORY = "category";
     public static final String DIFFICULTY = "difficulty";
-
     public static final String RECIPE_DATE = "date";
     public static final String RECIPE_INSTRUCTIONS = "instructions";
     public static final String _ID = "_id";
