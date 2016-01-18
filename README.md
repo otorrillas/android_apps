@@ -1,1 +1,1 @@
-# android_sample_aplications
+# Android programming: sample applications
