@@ -1,1 +1,1 @@
-# Android programming: sample applications
+# Android programming: applications I have developed myself
