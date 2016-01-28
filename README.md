@@ -1,7 +1,7 @@
-Android app programming
+Android apps
 ======
 
-This repository includes Android applications I have developed myself.
+This repository includes various Android applications I have developed myself.
 
 - **Geography**: a Geography game.
 - **RandomAsteroids**: an 'awkward' asteroids game.
