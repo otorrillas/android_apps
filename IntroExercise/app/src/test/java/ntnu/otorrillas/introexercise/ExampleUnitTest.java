@@ -1,4 +1,4 @@
-package easycooking.otorrillas.introexercise;
+package ntnu.otorrillas.introexercise;
 
 import org.junit.Test;
 

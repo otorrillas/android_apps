@@ -1,4 +1,4 @@
-package easycooking.otorrillas.introexercise;
+package ntnu.otorrillas.introexercise;
 
 import android.app.Application;
 import android.test.ApplicationTestCase;

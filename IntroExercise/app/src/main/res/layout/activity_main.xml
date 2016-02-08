@@ -7,10 +7,41 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="easycooking.otorrillas.introexercise.MainActivity">
+    tools:context="ntnu.otorrillas.introexercise.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:gravity="center"
+        >
+        <Button
+            android:id="@+id/btn_task1"
+            android:onClick="launchTask1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TASK 1"/>
+        <Button
+            android:id="@+id/btn_task2"
+            android:onClick="launchTask2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TASK 2"/>
+        <Button
+            android:id="@+id/btn_task3"
+            android:onClick="launchTask3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TASK 3"/>
+        <Button
+            android:id="@+id/btn_task4"
+            android:onClick="launchTask4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TASK 4"/>
+    </LinearLayout>
+
+
+
 </RelativeLayout>

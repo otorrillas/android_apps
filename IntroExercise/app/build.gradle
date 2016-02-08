@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.2"
 
     defaultConfig {
-        applicationId "easycooking.otorrillas.introexercise"
+        applicationId "ntnu.otorrillas.introexercise"
         minSdkVersion 18
         targetSdkVersion 23
         versionCode 1
