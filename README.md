@@ -6,3 +6,4 @@ This repository includes various Android applications I have developed myself.
 - **Geography**: a Geography game.
 - **RandomAsteroids**: an 'awkward' asteroids game.
 - **EasyCooking**: an application for storing cooking recipes.
+- **IntroExercise**: sample exercises for Sheep library introduction.
