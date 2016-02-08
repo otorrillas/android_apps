@@ -8,17 +8,8 @@ import sheep.graphics.Image;
  */
 public class Helicopter extends Sprite {
 
-    /* DIR_UP, DIR_DOWN, DIR_RIGHT, DIR_LEFT */
-    private static final int DIR_UP = 0;
-    private static final int DIR_DOWN = 1;
-    private static final int DIR_RIGHT = 2;
-    private static final int DIR_LEFT = 3;
-    private boolean[] directions;
-
-
     public Helicopter(Image image, float posx, float posy) {
         super(image);
-        directions = new boolean[4]; // by default, initialized to false
         setPosition(posx, posy);
     }
 

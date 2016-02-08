@@ -3,6 +3,8 @@ package ntnu.otorrillas.introexercise.task3;
 import android.graphics.Canvas;
 import android.util.Log;
 
+import java.util.ArrayList;
+
 import ntnu.otorrillas.introexercise.Helicopter;
 import ntnu.otorrillas.introexercise.R;
 import sheep.game.Layer;
@@ -15,36 +17,60 @@ import sheep.math.Vector2;
  */
 public class Task3Layer extends Layer {
 
-    private Helicopter helicopter;
+
+    private ArrayList<Helicopter> helicopters;
     private float[] screenDimensions = new float[2];
     private float[] imageDimensions = new float[2];
 
+
     public Task3Layer(int height, int width) {
+
+        /* Initialization values */
         Image img = new Image(R.drawable.helicopter1);
         screenDimensions[1] = (float) height;
         screenDimensions[0] = (float) width;
         imageDimensions[0] = img.getWidth();
         imageDimensions[1] = img.getHeight();
-        Log.v("ImgWidth", Float.toString(imageDimensions[0]));
-        Log.v("ImgHeight", Float.toString(imageDimensions[1]));
+        float[] helicopters_posX = {500, 500, 500};
+        float[] helicopters_posY = {100, 400, 800};
+        float[] helicopters_speedX = {-400, -100, -800};
+        float[] helicopters_speedY = {-600, 400, -100};
 
-        helicopter = new Helicopter(img, width / 2, height / 2);
-        helicopter.setSpeed(-400, 400);
+        /* Initialization parameters */
+        helicopters = new ArrayList<>();
+        for(int i = 0; i < 3; i++) {
+            Helicopter helicopter = new Helicopter(img, helicopters_posX[i], helicopters_posY[i]);
+            helicopter.setSpeed(helicopters_speedX[i], helicopters_speedY[i]);
+            helicopters.add(helicopter);
+        }
     }
 
     @Override
     public void draw(Canvas canvas, BoundingBox boundingBox) {
-        helicopter.draw(canvas);
+        for(Helicopter helicopter : helicopters)
+            helicopter.draw(canvas);
     }
 
     @Override
     public void update(float dt) {
-        bounceOnMargins();
-        helicopter.update(dt);
+        for(Helicopter helicopter : helicopters) {
+            bounceOnMargins(helicopter);
+            bounceOnCollisions(helicopter);
+            helicopter.update(dt);
+        }
+    }
+
+    private void bounceOnCollisions(Helicopter helicopter) {
+        for(Helicopter heli2 : helicopters) {
+            if(heli2 != helicopter && helicopter.collides(heli2)) {
+                helicopter.changeDirX();
+                helicopter.changeDirY();
+            }
+        }
     }
 
 
-    private void bounceOnMargins() {
+    private void bounceOnMargins(Helicopter helicopter) {
         Vector2 currPos = helicopter.getPosition();
         Vector2 currSpeed = helicopter.getSpeed();
 

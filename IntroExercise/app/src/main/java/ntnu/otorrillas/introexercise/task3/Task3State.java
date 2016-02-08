@@ -15,11 +15,11 @@ public class Task3State extends State {
 
     private World world;
     private Task3Layer task3Layer;
-    private Sound sound;
+
 
     public Task3State(int height, int width) {
         world = new World();
-        sound = new Sound(R.raw.);
+
         task3Layer = new Task3Layer(height, width);
         world.addLayer(task3Layer);
     }
