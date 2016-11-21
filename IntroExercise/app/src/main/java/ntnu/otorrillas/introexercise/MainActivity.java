@@ -9,6 +9,7 @@ import android.widget.Toast;
 import ntnu.otorrillas.introexercise.task1.Task1Activity;
 import ntnu.otorrillas.introexercise.task2.Task2Activity;
 import ntnu.otorrillas.introexercise.task3.Task3Activity;
+import ntnu.otorrillas.introexercise.task4.Task4Activity;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -36,8 +37,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void launchTask4(View v) {
-        Toast t = Toast.makeText(getApplicationContext(), "Feature not available yet", Toast.LENGTH_SHORT);
-        t.show();
+        Intent i = new Intent(getApplicationContext(), Task4Activity.class);
+        startActivity(i);
     }
 
 }

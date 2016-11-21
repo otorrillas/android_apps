@@ -7,6 +7,8 @@ import android.view.MotionEvent;
 
 import sheep.game.State;
 import sheep.game.World;
+import sheep.input.Touch;
+import sheep.input.TouchListener;
 
 /**
  * Created by otorr on 01/02/2016.
@@ -34,6 +36,7 @@ public class Task2State extends State {
 
     @Override
     public boolean onTouchUp(MotionEvent event) {
+
         float x = event.getX();
         float y = event.getY();
         Log.v("X pressed: ", Float.toString(x));
